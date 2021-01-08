@@ -34,7 +34,7 @@ public class CompanyController {
     private OwnerRepository ownerRepository;
 
 
-    @GetMapping("v1/companies")
+    @GetMapping("/companies")
     public @ResponseBody ResponseEntity<List<Company>> get() {
         List<Company>  response= companyService.getCompanies();
         return  new ResponseEntity<>(response, HttpStatus.OK);
