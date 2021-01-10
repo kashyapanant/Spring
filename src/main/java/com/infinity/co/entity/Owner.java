@@ -3,10 +3,13 @@ package com.infinity.co.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "owner")
-public class Owner {
+public class Owner implements Serializable {
+
+    private static final long serialVersionUID = 377846748006283344L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -31,17 +34,6 @@ public class Owner {
     public void setCompany(Company company) {
         this.company = company;
     }
-
-    /*@Column(name = "company_id", unique = true)
-    private Integer companyId;
-
-    public Integer getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }*/
 
     public String getOwnerSsn() {
         return ownerSsn;

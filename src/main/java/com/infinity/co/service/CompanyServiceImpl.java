@@ -1,5 +1,6 @@
 package com.infinity.co.service;
 
+import com.infinity.co.constants.Constants;
 import com.infinity.co.entity.Company;
 import com.infinity.co.exception.CompanyException;
 import com.infinity.co.model.CompanyRequest;
@@ -33,14 +34,13 @@ public class CompanyServiceImpl implements CompanyService{
                 }
             }
         ResponseContext response = new ResponseContext();
-        response.setResponseCode("0000");
-        response.setResponseMessage("Success");
+        response.setResponseCode(Constants.SUCCESS_CODE);
+        response.setResponseMessage(Constants.SUCCESS);
         return response;
     }
 
     public List<Company> getCompanies() {
-        List<Company> companyList = companyRepository.findAll();
-        return companyList;
+        return companyRepository.findAll();
     }
 
     public Company searchCompany(String companyName)throws CompanyException {

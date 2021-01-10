@@ -3,12 +3,15 @@ package com.infinity.co.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="company")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","ownerList"})
-public class Company {
+public class Company implements Serializable {
+
+    private static final long serialVersionUID = -7805062159899664617L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

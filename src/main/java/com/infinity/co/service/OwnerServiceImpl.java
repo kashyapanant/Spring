@@ -1,5 +1,6 @@
 package com.infinity.co.service;
 
+import com.infinity.co.constants.Constants;
 import com.infinity.co.entity.Owner;
 import com.infinity.co.exception.CompanyException;
 import com.infinity.co.exception.OwnerException;
@@ -41,8 +42,8 @@ public class OwnerServiceImpl implements OwnerService{
             throw new OwnerException(message, HttpStatus.NOT_ACCEPTABLE);
         }
         ResponseContext response = new ResponseContext();
-        response.setResponseCode("0000");
-        response.setResponseMessage("Success");
+        response.setResponseCode(Constants.SUCCESS_CODE);
+        response.setResponseMessage(Constants.SUCCESS);
         return response;
     }
 
